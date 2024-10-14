@@ -1,5 +1,5 @@
-import Link from "next/link";
+import { Colors } from "./_components/colors";
 
 export default function Home() {
-  return <Link href="/blog">Blog</Link>;
+  return <Colors />;
 }
