@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
-  return <div>ClassBon</div>;
+  return <Link href="/blog">Blog</Link>;
 }
