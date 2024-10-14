@@ -17,11 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html dir="rtl" className={`dark ${figtree.variable} `}>
-      <body className="min-h-screen grid grid-rows-[80px_1fr_auto]  dark:bg-base-100 dark:text-base-content">
+      <body className="min-h-screen grid grid-rows-[80px_1fr_auto]  dark:bg-base-100 dark:text-base-content px-4">
         <Header />
-        <div className="flex-1 flex justify-center items-center">
-          {children}
-        </div>
+        {children}
         <Footer />
       </body>
     </html>

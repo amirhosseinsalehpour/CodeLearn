@@ -80,3 +80,12 @@ html {
 :lang(en) {
   font-family: var(--font-figtree);
 }
+.gradient {
+  @apply bg-gradient-to-r from-gradient-first to-gradient-second text-transparent bg-clip-text;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu {
+    display: none; /* Hide mobile menu on larger screens */
+  }
+}
