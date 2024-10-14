@@ -2,27 +2,17 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
-const menuItem: NavigationMenuItem[] = [
-  {
-    title: "صفحه اصلی",
-    href: "/",
-  },
-  {
-    title: "دوره های ریکت و نکست",
-    href: "/courses",
-  },
-  {
-    title: "مطالب و مقالات",
-    href: "/blog",
-  },
+const menuItems: NavigationMenuItem[] = [
+  { title: "صفحه اصلی", href: "/" },
+  { title: "دوره‌های ری‌اکت و نکست", href: "/courses" },
+  { title: "مطالب و مقالات", href: "/blog" },
 ];
 
 export const TopNavigation: React.FC = () => {
   const pathName = usePathname();
   return (
     <ul className="flex gap-8 mr-12">
-      {menuItem.map((item) => {
+      {menuItems.map((item) => {
         const isActive = pathName === item.href;
         return (
           <li key={`navigation-${item.href}`}>
