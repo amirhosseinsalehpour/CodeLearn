@@ -1,5 +1,3 @@
-import { Colors } from "./_components/colors";
-
 export default function Home() {
-  return <Colors />;
+  return <div>Main page</div>;
 }

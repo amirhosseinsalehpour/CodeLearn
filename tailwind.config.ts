@@ -58,8 +58,12 @@ const config: Config = {
   content: ["./src/app/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     colors: tailwindColors,
+    container: {
+      center: true,
+    },
     extend: {},
   },
+  darkMode: "class",
   plugins: [],
 };
 export default config;

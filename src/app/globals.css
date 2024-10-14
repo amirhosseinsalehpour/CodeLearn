@@ -74,12 +74,8 @@
     url("/fonts/IRANSansXFaNum-Bold.woff2") format("woff2");
 }
 
-body {
+html {
   font-family: IRANSansXFa;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  padding: 0;
 }
 :lang(en) {
   font-family: var(--font-figtree);
