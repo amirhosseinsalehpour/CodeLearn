@@ -1,5 +1,5 @@
 "use client";
-import React, { HTMLAttributes, ReactNode } from "react";
+import React, { ReactNode } from "react";
 import { ComponentBase } from "../types/component-base.type";
 import classNames from "classnames";
 import { Size } from "../types/size.type";
