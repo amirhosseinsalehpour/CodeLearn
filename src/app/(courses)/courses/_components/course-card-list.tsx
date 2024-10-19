@@ -1,7 +1,7 @@
 import React from "react";
 import { CourseSummary } from "@/types/course-summary.interface";
 
-import { CourseCard, CourseCardProps } from "./course-card";
+import { CourseCard } from "./course-card";
 
 type CourseCardListProps = {
   courses: CourseSummary[];
