@@ -1,6 +1,6 @@
 "use client";
 import React, { FC } from "react";
-import { SvgIcon } from "./icon.types";
+import type { SvgIcon } from "./icon.types";
 
 export const BaseIcon: FC<SvgIcon> = ({
   color = "currentColor",
