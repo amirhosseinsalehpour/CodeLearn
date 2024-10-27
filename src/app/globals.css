@@ -91,3 +91,14 @@ html {
     display: none; /* Hide mobile menu on larger screens */
   }
 }
+.animated-icon {
+  & > * {
+    @apply transition-all;
+  }
+  &:hover {
+    @apply text-white;
+    & > * {
+      @apply -translate-x-2;
+    }
+  }
+}
