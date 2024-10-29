@@ -15,7 +15,7 @@ export const HomeHeroSection: React.FC = () => {
           </h1>
           <p className="max-w-2xl  text-lg md:text-xl font-bold leading-8">
             هر جای مسیرِ برنامه‌نویسی که باشی، با هم‌راهی استادهای باتجربهٔ
-            کلاسبن می‌تونی بدون محدودیت به قله‌های بالاتر صعود کنی. ما همیشه
+            کدلرن می‌تونی بدون محدودیت به قله‌های بالاتر صعود کنی. ما همیشه
             هواتو داریم.
           </p>
           <div className="mt-5 flex gap-4 justify-center xl:justify-start">

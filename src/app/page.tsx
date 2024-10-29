@@ -1,4 +1,4 @@
-import { CourseSummary } from "@/types/course-summary.interface";
+// import { CourseSummary } from "@/types/course-summary.interface";
 import { HomeHeroSection } from "./_components/home-hero-section/HomeHeroSection";
 import { CourseCardList } from "./(courses)/courses/_components/course-card-list";
 import { homeFeatures } from "@/data/home-features";
@@ -7,21 +7,13 @@ import { Button } from "./_components/button";
 import { IconArrowLeftFill } from "./_components/icons/icons";
 import { BlogPostSummary } from "@/types/blog-post-summary.interface";
 import { BlogPostCardList } from "./(blog)/blog/_components/blog-post-card-list";
-
-async function getNewestCourses(count: number): Promise<CourseSummary[]> {
-  const res = await fetch(
-    `https://api.classbon.com/api/courses/newest/${count}`,
-    {
-      next: {
-        revalidate: 10,
-      },
-    }
-  );
-  return res.json();
-}
+import { API_URL } from "@/configs/global";
+import { Suspense } from "react";
+import { Loading } from "./_components/loading";
+import { CardPlaceholder } from "./_components/placeholders/card/card-placeholder";
 
 async function getNewestPosts(count: number): Promise<BlogPostSummary[]> {
-  const res = await fetch(`https://api.classbon.com/api/blog/newest/${count}`, {
+  const res = await fetch(`${API_URL}/blog/newest/${count}`, {
     next: {
       revalidate: 10,
     },
@@ -30,14 +22,9 @@ async function getNewestPosts(count: number): Promise<BlogPostSummary[]> {
 }
 
 export default async function Home() {
-  const newestCoursesData = getNewestCourses(4);
   const newestPostsData = getNewestPosts(4);
 
-  const [newestCourses, newestBlogPosts] = await Promise.all([
-    newestCoursesData,
-    newestPostsData,
-  ]);
-  console.log(newestBlogPosts);
+  const [newestBlogPosts] = await Promise.all([newestPostsData]);
 
   return (
     <>
@@ -54,7 +41,9 @@ export default async function Home() {
           <h2 className="text-2xl font-extrabold">تازه ترین دوره های آموزشی</h2>
           <p>برای به روز موندن، یادگرفتن نکته های تازه ضروریه</p>
         </div>
-        <CourseCardList courses={newestCourses} />
+        <Suspense fallback={<CardPlaceholder count={4} className="mt-5" />}>
+          <CourseCardList courses={[]} />
+        </Suspense>
       </section>
       <section className="px-2 my-40">
         {/* <div className="sticky top-0 pt-0 text-center"> */}
