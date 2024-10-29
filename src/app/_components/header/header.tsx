@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export const Header: React.FC = () => {
   return (
-    <header className="border-b dark:border-base-content dark:border-opacity-5 ">
-      <div className="container flex justify-between items-center">
+    <header className="border-b flex  dark:border-base-content dark:border-opacity-5 ">
+      <div className="container flex justify-between items-center ">
         <Link href="/">
           <Image
             src="/images/logo-light.svg"
