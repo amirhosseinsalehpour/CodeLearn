@@ -1,4 +1,3 @@
-// import { CourseSummary } from "@/types/course-summary.interface";
 import { HomeHeroSection } from "./_components/home-hero-section/HomeHeroSection";
 import { CourseCardList } from "./(courses)/courses/_components/course-card-list";
 import { homeFeatures } from "@/data/home-features";
@@ -9,7 +8,6 @@ import { BlogPostSummary } from "@/types/blog-post-summary.interface";
 import { BlogPostCardList } from "./(blog)/blog/_components/blog-post-card-list";
 import { API_URL } from "@/configs/global";
 import { Suspense } from "react";
-import { Loading } from "./_components/loading";
 import { CardPlaceholder } from "./_components/placeholders/card/card-placeholder";
 
 async function getNewestPosts(count: number): Promise<BlogPostSummary[]> {
