@@ -10,7 +10,6 @@ type CourseCardListProps = {
 
 async function getNewestCourses(count: number): Promise<CourseSummary[]> {
   const res = await fetch(`${API_URL}/courses/newest/${count}`, {
-    cache: "no-store",
     next: {
       revalidate: 10,
     },
