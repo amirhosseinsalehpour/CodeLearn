@@ -12,7 +12,16 @@ type NotFoundError = Problem;
 type UnhandledException = Problem;
 type NetworkError = Problem;
 
+type ApiError =
+  | BadRequestError
+  | NetworkError
+  | NotFoundError
+  | UnhandledException
+  | UnauthorizedError
+  | ValidationError;
+
 export type {
+  ApiError,
   Problem,
   BadRequestError,
   UnauthorizedError,
