@@ -3,8 +3,10 @@
 import { Button } from "@/app/_components/button/button";
 import { SignIn } from "../types/signin.types";
 import { useForm } from "react-hook-form";
-import { useSignIn } from "../api/signin";
 import { useRouter } from "next/navigation";
+import { useNotificationStore } from "@/stores/notification.store";
+import { useEffect } from "react";
+import { useSignIn } from "../api/signin";
 import TextInput from "@/app/_components/form-input/text-input/text-input";
 
 const SignInForm = () => {
@@ -26,6 +28,17 @@ const SignInForm = () => {
   const onSubmit = (data: SignIn) => {
     signIn.submit(data);
   };
+
+  const showNotification = useNotificationStore(
+    (state) => state.showNotification
+  );
+
+  useEffect(() => {
+    showNotification({
+      type: "success",
+      message: "عملیات با موفقیت انجام شد",
+    });
+  }, []);
 
   return (
     <>

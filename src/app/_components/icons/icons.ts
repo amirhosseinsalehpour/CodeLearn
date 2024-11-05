@@ -4,6 +4,8 @@ export { default as IconArrowLeftFill } from "./src/arrow-left-fill";
 export { default as IconArrowLeft } from "./src/arrow-left";
 export { default as IconBasket } from "./src/basket";
 export { default as IconCalendar } from "./src/calendar";
+export { default as IconInfo } from "./src/info";
+export { default as IconError } from "./src/error";
 export { default as IconCheck } from "./src/check";
 export { default as IconChevronDown } from "./src/chevron-down";
 export { default as IconChevronUp } from "./src/chevron-up";

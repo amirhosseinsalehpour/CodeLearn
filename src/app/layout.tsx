@@ -3,6 +3,7 @@ import { Footer } from "./_components/footer/footer";
 import { Header } from "./_components/header/header";
 import "./globals.css";
 import { Figtree } from "next/font/google";
+import { Notifications } from "./_components/notification/notifications";
 
 const figtree = Figtree({
   display: "swap",
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html dir="rtl" className={`dark ${figtree.variable} `}>
       <body className="min-h-screen grid grid-rows-[80px_1fr_auto]  dark:bg-base-100 dark:text-base-content px-4">
+        <Notifications />
         <QueryProvider>
           <Header />
           {children}
