@@ -134,3 +134,39 @@
 .fade-in {
   animation: fadeIn 0.8s ease forwards;
 }
+
+/* انیمیشن باز شدن */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%); /* از خارج صفحه */
+  }
+  to {
+    transform: translateX(0); /* به حالت نمایان */
+  }
+}
+
+/* انیمیشن بسته شدن */
+@keyframes slideOut {
+  from {
+    transform: translateX(0); /* از حالت نمایان */
+  }
+  to {
+    transform: translateX(100%); /* به خارج صفحه */
+  }
+}
+
+/* کلاس منو */
+.mobile-menu {
+  transform: translateX(100%); /* پیش‌فرض: خارج از صفحه */
+  transition: transform 0.3s ease; /* انیمیشن ملایم */
+}
+
+/* وقتی که منو باز است */
+.mobile-menu.open {
+  animation: slideIn 0.3s forwards; /* انیمیشن باز شدن */
+}
+
+/* وقتی که منو بسته است */
+.mobile-menu.close {
+  animation: slideOut 0.3s forwards; /* انیمیشن بسته شدن */
+}
